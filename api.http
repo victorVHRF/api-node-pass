@@ -1,0 +1,58 @@
+GET http://localhost:3333
+###
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+  "title": 123,
+  "details": null,
+  "maximumAttendees": 1
+}
+
+###
+POST http://localhost:3333/events/f63d5758-a632-4a5a-ae19-769d3c6decde/attendees
+Content-Type: application/json
+
+{
+  "name": "Victor",
+  "email": "victor@tvmorena.com.br"
+}
+
+###
+
+POST http://localhost:3333/events/b81622af-b00a-4fa0-9b9c-b3f94b2fee34/attendees
+Content-Type: application/json
+
+{
+  "name": "Victor",
+  "email": "victor2@tvmorena.com.br"
+}
+###
+
+POST http://localhost:3333/events/03038122-1b71-4abb-bb1b-0df15eb09a73/attendees
+Content-Type: application/json
+
+{
+  "name": "Victor",
+  "email": "victor2@tvmorena.com.br"
+}
+
+###
+
+#getEvent
+GET http://localhost:3333/events/03038122-1b71-4abb-bb1b-0df15eb09a73
+
+###
+
+#getAttendee
+GET http://localhost:3333/attendees/1/badge
+
+###
+
+#checkIn
+GET http://localhost:3333/attendees/7/check-in
+
+###
+
+#get-event-attendee
+GET http://localhost:3333/events/03038122-1b71-4abb-bb1b-0df15eb09a73/attendees?query=victor
